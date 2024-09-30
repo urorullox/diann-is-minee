@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trigger Audio with Popup</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dian</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .play-button {
+            background-color: pink; /* Button color */
+            border: none;
+            border-radius: 8px; /* Rounded corners */
+            color: white;
+            padding: 15px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+            position: fixed; /* Fixed position to stay above all elements */
+            top: 20px; /* Distance from the top */
+            right: 20px; /* Distance from the right */
+            z-index: 9999; /* High z-index to ensure it stays on top */
+        }
+        .play-button:hover {
+            background-color: #ff69b4; /* Slightly darker pink on hover */
+        }
+    </style>
 </head>
 <body>
-  <audio id="myAudio" loop>
-    <source src="takemyhandsyg.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+    <button class="play-button" onclick="playSong()">Play Song</button>
 
-  <button onclick="triggerAudio()">Click to Start Music</button>
+    <audio id="audio" src="your-song.mp3"></audio>
 
-  <script>
-    function triggerAudio() {
-      alert("Click OK to start the music");
-      var audio = document.getElementById('myAudio');
-      audio.play(); // Play the audio after user confirms the alert
-    }
-
+    <script>
+        function playSong() {
+            const audio = document.getElementById('audio');
+            audio.play();
+        }
+    </script>
+  
   <div class="bubbles">
     <div class="bubble"><svg class="heart" viewBox="0 0 32 32">
         <title>heart22</title>
