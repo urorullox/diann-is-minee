@@ -6,23 +6,20 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<audio id="myAudio" loop>
-  <source src="takemyhandsyg.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+  <audio id="myAudio" loop>
+    <source src="takemyhandsyg.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
-<script>
-  function triggerAudio() {
-    alert("should i play the song for you princess diann?");
-    var audio = document.getElementById('myAudio');
-    audio.play(); // Play the audio
-  }
+  <button onclick="triggerAudio()">Click to Start Music</button>
 
-  // Automatically trigger the popup and audio on page load
-  window.onload = function() {
-    triggerAudio();
-  };
-</script>
+  <script>
+    function triggerAudio() {
+      alert("Click OK to start the music");
+      var audio = document.getElementById('myAudio');
+      audio.play(); // Play the audio after user confirms the alert
+    }
+  </script>
 
   <div class="bubbles">
     <div class="bubble"><svg class="heart" viewBox="0 0 32 32">
