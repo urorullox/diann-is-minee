@@ -8,8 +8,8 @@
     /* Style for the pink button */
     #triggerButton {
       position: fixed;
-      bottom: 20px; /* Distance from the bottom of the page */
-      right: 20px;  /* Distance from the right of the page */
+      bottom: 20px; /* Stay fixed 20px from the bottom */
+      right: 20px;  /* Stay fixed 20px from the right */
       padding: 10px 20px;
       background-color: pink;
       border: none;
@@ -17,22 +17,16 @@
       color: white;
       font-size: 16px;
       cursor: pointer;
-      z-index: 1000; /* Ensure the button stays above other elements */
+      z-index: 9999; /* Ensure the button stays on top of other content */
     }
-    
-    /* Make the button more interactive */
+
+    /* Button interaction */
     #triggerButton:hover {
-      background-color: #ff66b2; /* Darker shade of pink on hover */
+      background-color: #ff66b2; /* Darker shade of pink when hovered */
     }
   </style>
 </head>
 <body>
-  <!-- Example of other elements that might be on the page -->
-  <div style="height: 1500px;">
-    <h1>Content on the Page</h1>
-    <p>This is some content that would scroll, but the button should stay fixed at the bottom right.</p>
-    <p>Scroll down to test the button.</p>
-  </div>
 
   <audio id="myAudio" loop>
     <source src="takemyhandsyg.mp3" type="audio/mpeg">
@@ -45,7 +39,7 @@
     function triggerAudio() {
       alert("Click OK to start the music");
       var audio = document.getElementById('myAudio');
-      audio.play(); // Play the audio after user confirms the alert
+      audio.play(); // Start audio when user clicks OK
     }
   </script>
 
