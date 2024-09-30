@@ -9,8 +9,7 @@
     #triggerButton {
       position: fixed;
       bottom: 20px; /* Distance from the bottom of the page */
-      left: 50%;
-      transform: translateX(-50%);
+      right: 20px;  /* Distance from the right of the page */
       padding: 10px 20px;
       background-color: pink;
       border: none;
@@ -18,6 +17,7 @@
       color: white;
       font-size: 16px;
       cursor: pointer;
+      z-index: 1000; /* Ensure the button stays above other elements */
     }
     
     /* Make the button more interactive */
@@ -27,6 +27,13 @@
   </style>
 </head>
 <body>
+  <!-- Example of other elements that might be on the page -->
+  <div style="height: 1500px;">
+    <h1>Content on the Page</h1>
+    <p>This is some content that would scroll, but the button should stay fixed at the bottom right.</p>
+    <p>Scroll down to test the button.</p>
+  </div>
+
   <audio id="myAudio" loop>
     <source src="takemyhandsyg.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
