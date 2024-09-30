@@ -6,19 +6,22 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<audio id="myAudio" loop muted>
+<audio id="myAudio" loop>
   <source src="takemyhandsyg.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
-<button onclick="playAudio()">Play Sound</button>
-
 <script>
-  function playAudio() {
+  function triggerAudio() {
+    alert("should i play the song for you princess diann?");
     var audio = document.getElementById('myAudio');
-    audio.muted = false; // Unmute the audio
     audio.play(); // Play the audio
   }
+
+  // Automatically trigger the popup and audio on page load
+  window.onload = function() {
+    triggerAudio();
+  };
 </script>
 
   <div class="bubbles">
