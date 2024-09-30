@@ -3,45 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trigger Audio with Popup</title>
+  <title>Play Song on Button Click</title>
   <style>
-    /* Style for the pink button */
-    #triggerButton {
+    /* Ensure the button stays at the bottom of the page and is styled pink */
+    #playButton {
       position: fixed;
-      bottom: 20px; /* Stay fixed 20px from the bottom */
-      right: 20px;  /* Stay fixed 20px from the right */
-      padding: 10px 20px;
+      bottom: 0;
+      width: 100%;
       background-color: pink;
+      color: black;
+      font-size: 20px;
+      padding: 10px;
       border: none;
-      border-radius: 5px;
-      color: white;
-      font-size: 16px;
       cursor: pointer;
-      z-index: 9999; /* Ensure the button stays on top of other content */
-    }
-
-    /* Button interaction */
-    #triggerButton:hover {
-      background-color: #ff66b2; /* Darker shade of pink when hovered */
+      z-index: 1000; /* Ensure it's above all other elements */
     }
   </style>
 </head>
 <body>
-
-  <audio id="myAudio" loop>
-    <source src="takemyhandsyg.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-
-  <button id="triggerButton" onclick="triggerAudio()">Click to Start Music</button>
-
-  <script>
-    function triggerAudio() {
-      alert("Click OK to start the music");
-      var audio = document.getElementById('myAudio');
-      audio.play(); // Start audio when user clicks OK
-    }
-  </script>
 
   <div class="bubbles">
     <div class="bubble"><svg class="heart" viewBox="0 0 32 32">
@@ -151,6 +130,20 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/pathseg@1.2.1/pathseg.min.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/poly-decomp@0.3.0/build/decomp.min.js'></script><script  src="./script.js"></script>
+
+  <!-- Audio element to play the song -->
+  <audio id="myAudio" src="your-song.mp3"></audio>
+
+  <!-- Button to trigger the audio -->
+  <button id="playButton" onclick="playAudio()">Play Song</button>
+
+  <script>
+    // JavaScript function to play the audio when the button is clicked
+    function playAudio() {
+      var audio = document.getElementById('myAudio');
+      audio.play();
+    }
+  </script>
 
 </body>
 </html>
